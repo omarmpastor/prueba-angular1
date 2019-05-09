@@ -1,3 +1,7 @@
 import angularjs from 'angular';
 
-var myApp = angularjs.module("myApp", []);
+angularjs.module("myApp", [])
+    .controller('myCtrl', ["$scope", function ($scope) {
+        $scope.nombre = "Prueba";
+        $scope.toUpper = () => $scope.nombre.toUpperCase();
+    }]);
