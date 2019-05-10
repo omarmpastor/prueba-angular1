@@ -1,7 +1,18 @@
 import angularjs from 'angular';
 
-angularjs.module("myApp", [])
-    .controller('myCtrl', ["$scope", function ($scope) {
-        $scope.nombre = "Prueba";
-        $scope.toUpper = () => $scope.nombre.toUpperCase();
+var myApp = angularjs.module("myApp", [])
+
+myApp.controller('myCtrl', ["$scope", function ($scope) {
+        this.data = {
+            nombre: "",
+            heroes: [
+                "Batman",
+                "Spiderman",
+                "Lobezno"
+            ]
+        };
+
+        this.addHeroe = (name) => {
+            this.data.heroes.push(name);
+        }
     }]);

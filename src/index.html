@@ -8,10 +8,23 @@
 </head>
 <body ng-app="myApp">
 
-    <div ng-controller="myCtrl">
-        <input type="text" ng-model="nombre" />
+    <div ng-controller="myCtrl as ctrl">
+        <div>
+            <label for="filtro">Filtro</label>
+            <input id="filtro" type="text" ng-model="ctrl.filtro" />
+        </div>
 
-        <div>{{toUpper()}}</div>
+        <div>
+            <label for="newheroe">Nuevo Heroe</label>
+            <input id="newheroe" type="text" ng-model="ctrl.data.nombre" />
+            <input type="button" ng-click="ctrl.addHeroe(ctrl.data.nombre)" value="Add">
+        </div>
+        
+        <ul>
+            <li ng-repeat="heroe in ctrl.data.heroes | filter:ctrl.filtro | orderBy:heroe track by $index">
+                {{ heroe }}
+            </li>
+        </ul>
     </div>
 
     <script src="./bundle.js"></script>
