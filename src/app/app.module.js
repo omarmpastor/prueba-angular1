@@ -2,16 +2,6 @@ import angularjs from 'angular';
 
 import HeroesService from './heroes.service';
 
-var heroesArr = [
-    "Batman",
-    "Spiderman",
-    "Lobezno"
-];
-
-var myFactoryRandom = (arrHeroes = "Pepito") => {
-    return arrHeroes;//heroes[Math.floor(Math.random() * heroes.length)];
-}
-
 var myApp = angularjs.module("myApp", []);
 
 myApp.controller('myCtrl', ["heroesSrv", function (heroesSrv) {
@@ -25,5 +15,16 @@ myApp.controller('myCtrl', ["heroesSrv", function (heroesSrv) {
             heroesSrv.addHeroe(name);
         }
     }]);
-myApp.value("heroes", heroesArr);
-myApp.service("heroesSrv", ["heroes", HeroesService]);
+myApp.service("heroesSrv", ["$http", HeroesService]);
+/*
+myApp.provider("heroesSrvProvider", () => {
+    $get = function(HeroesService) {
+        return new HeroesService();
+    }
+});
+*/
+myApp.provider('heroesSrvProvider', function(){
+    this.$get = ["heroesSrv",(HeroesService) => {
+        return new HeroesService(["Joker","Dos caras"]);
+    }];
+});

@@ -1,6 +1,11 @@
 export default class HeroesService {
-    constructor(heroes) {
-        this.heroes = heroes;
+    constructor($http) {
+        this.heroes = [];
+        this.$http = $http;
+
+        this.$http.get('./data.json')
+            .then(res => this.heroes = res.data)
+            .catch(err => console.log(err));
     }
 
     getAll() {
@@ -8,6 +13,6 @@ export default class HeroesService {
     }
 
     addHeroe(name) {
-        this.heroes.push(name);
+        this.heroes.push({ name });
     }
 }

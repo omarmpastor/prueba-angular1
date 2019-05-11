@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     new CopyPlugin([
       { from: path.resolve(__dirname, 'src', 'index.html') },
+      { from: path.resolve(__dirname, 'src', 'data.json') },
     ]),
   ],
   devServer: {

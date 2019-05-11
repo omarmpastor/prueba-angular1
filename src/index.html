@@ -21,8 +21,8 @@
         </div>
         
         <ul>
-            <li ng-repeat="heroe in ctrl.getHeroes() | filter:ctrl.filtro | orderBy:heroe track by $index">
-                {{ heroe }}
+            <li ng-repeat="heroe in ctrl.getHeroes() | filter:ctrl.filtro | orderBy:name track by $index">
+                {{ heroe.name }}
             </li>
         </ul>
     </div>
