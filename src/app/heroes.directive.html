@@ -10,7 +10,7 @@
 </div>
 
 <ul>
-    <li ng-repeat="heroe in ctrl.getHeroes() | filter:ctrl.filtro | orderBy:name track by $index">
+    <li ng-repeat="heroe in heroes | filter:ctrl.filtro | orderBy:name track by $index">
         {{ heroe.name }}
     </li>
 </ul>

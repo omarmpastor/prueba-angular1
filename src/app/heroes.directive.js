@@ -5,6 +5,9 @@ export default function () {
         restrict: 'E',
         replace: false,
         template,
-        link: (scope, element, attrs) => { }
+        link: (scope, element, attrs) => { },
+        scope: {
+            heroes: "=",
+        }
     };
 };
