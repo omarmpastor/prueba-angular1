@@ -16,12 +16,12 @@
 
         <div>
             <label for="newheroe">Nuevo Heroe</label>
-            <input id="newheroe" type="text" ng-model="ctrl.data.nombre" />
-            <input type="button" ng-click="ctrl.addHeroe(ctrl.data.nombre)" value="Add">
+            <input id="newheroe" type="text" ng-model="aaa" />
+            <input type="button" ng-click="ctrl.addHeroe(aaa)" value="Add">
         </div>
         
         <ul>
-            <li ng-repeat="heroe in ctrl.data.heroes | filter:ctrl.filtro | orderBy:heroe track by $index">
+            <li ng-repeat="heroe in ctrl.getHeroes() | filter:ctrl.filtro | orderBy:heroe track by $index">
                 {{ heroe }}
             </li>
         </ul>
