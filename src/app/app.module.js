@@ -2,6 +2,8 @@ import angularjs from 'angular';
 
 import HeroesService from './heroes.service';
 
+import HeroesDirective from './heroes.directive';
+
 var myApp = angularjs.module("myApp", []);
 
 myApp.controller('myCtrl', ["heroesSrv", function (heroesSrv) {
@@ -28,3 +30,5 @@ myApp.provider('heroesSrvProvider', function(){
         return new HeroesService(["Joker","Dos caras"]);
     }];
 });
+
+myApp.directive('heroesDirective', HeroesDirective);

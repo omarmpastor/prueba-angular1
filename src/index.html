@@ -9,22 +9,7 @@
 <body ng-app="myApp">
 
     <div ng-controller="myCtrl as ctrl">
-        <div>
-            <label for="filtro">Filtro</label>
-            <input id="filtro" type="text" ng-model="ctrl.filtro" />
-        </div>
-
-        <div>
-            <label for="newheroe">Nuevo Heroe</label>
-            <input id="newheroe" type="text" ng-model="aaa" />
-            <input type="button" ng-click="ctrl.addHeroe(aaa)" value="Add">
-        </div>
-        
-        <ul>
-            <li ng-repeat="heroe in ctrl.getHeroes() | filter:ctrl.filtro | orderBy:name track by $index">
-                {{ heroe.name }}
-            </li>
-        </ul>
+        <heroes-directive></heroes-directive>        
     </div>
 
     <script src="./bundle.js"></script>
