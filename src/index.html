@@ -9,7 +9,7 @@
 <body ng-app="myApp">
 
     <div ng-controller="myCtrl as ctrl">
-        <heroes-directive heroes="ctrl.getHeroes()"></heroes-directive>        
+        <heroes-directive heroes="ctrl.getHeroes()" on-add="ctrl.addHeroe(name)"></heroes-directive>        
     </div>
 
     <script src="./bundle.js"></script>

@@ -6,7 +6,7 @@
 <div>
     <label for="newheroe">Nuevo Heroe</label>
     <input id="newheroe" type="text" ng-model="aaa" />
-    <input type="button" ng-click="ctrl.addHeroe(aaa)" value="Add">
+    <input type="button" ng-click="onAdd({name: aaa})" value="Add">
 </div>
 
 <ul>

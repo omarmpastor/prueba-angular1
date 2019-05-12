@@ -8,6 +8,7 @@ export default function () {
         link: (scope, element, attrs) => { },
         scope: {
             heroes: "=",
+            onAdd: "&"
         }
     };
-};
+}
